@@ -1,0 +1,184 @@
+:root {
+  --c1:#1f5385;		/* Banner background, borders */
+  --c1-rev:#fff;
+  --c2:#ebf4fc;
+  --c3:#f1f7fd;
+  --c4:#d1e8ff;
+}
+
+* {
+	font-family:Helvetica, sans-serif;
+}
+
+html, body {
+	padding:0;
+	margin:0;
+}
+
+h1, h2, h3 {
+    font-weight:normal;
+	padding:0;
+	margin:0;
+}
+
+h1 {
+    font-size:1.2em;
+}
+
+h2 {
+    font-size:1.1em;
+}
+
+h3 {
+    font-size:1em;
+}
+
+main > *:not(hr) {
+	padding:8px;	
+}
+
+button, select, select option, input, textarea {
+	font-size:1.0em;
+	border:none;
+}
+
+button:disabled, select:disabled, select option:disabled, input:disabled, textarea:disabled {
+	cursor:not-allowed;
+}
+
+button, select:not([multiple]), select option, input, textarea {
+	transition:background 0.2s;
+}
+
+button, select:not([multiple]), select:not([multiple]) option, input, textarea {
+	background:var(--c3);
+}
+
+button, select:not([multiple]), select option {
+	cursor:pointer;
+}
+
+input, textarea {
+	cursor:text;
+}
+
+select {
+	width:100%;
+	height:100%;
+	outline: none !important;
+}
+
+select.is-placeholder, select option.select-placeholder {
+	font-style:italic;
+}
+
+select option {
+	padding:4px;
+}
+
+select, input {
+	padding:2px;
+}
+
+textarea {
+	width:400px;
+}
+
+button {
+    font-variant: all-small-caps;
+    color: var(--c1);
+    border: none;
+    border-bottom: solid 2px var(--c4);
+    border-radius: 2px;
+    background: var(--c2);
+    margin: 4px;
+    padding: 4px 8px;
+    transition: background 0.2s;
+}
+
+button.danger {
+	background-color: #f8d6d6;
+    border-bottom-color: #ff8383;
+    color: #810404;
+}
+
+
+button:hover:not(:disabled), select:not([multiple]):hover:not(:disabled), 
+select option:hover:not(:disabled), input:hover:not(:disabled), 
+textarea:hover:not(:disabled), button.checked:not(:disabled) {
+	background:var(--c4);
+	color:var(--c4-rev);
+}
+
+button.danger:hover:not(:disabled) {
+	background-color: #ff8383;
+}
+
+hr {
+	padding: 0;
+    border: none;
+    border-bottom: solid 1px var(--c1);
+}
+
+.page {
+	width:60%;
+}
+
+.row {
+	width:100%;
+}
+
+.column {
+	margin:0px 4px;
+}
+
+.banner {
+	background-color:var(--c1);
+	color:var(--c1-rev);
+}
+
+form {
+    padding: 12px;
+    width: 500px;
+}
+
+form > div {
+	display:flex;
+	width:100%;
+    margin: 6px 0px;
+}
+
+form > div > *:first-child {
+    font-weight:bold;
+	width:120px;
+}
+
+form > div > *:last-child {
+	flex: 1;
+}
+
+.page {
+    height: 400px;
+    display: flex;
+}
+
+.page .buttons-container {
+	position:absolute;
+	bottom:0px;
+	width: 100%;
+}
+
+.page .buttons-container button:last-child {
+	float:right;
+}
+
+.page > * {
+	margin:0px 8px;
+    border: solid thin var(--c1);
+	box-sizing:border-box;
+    position: relative;
+}
+
+.page >*:first-child {
+	flex: 0 0 300px;
+}
