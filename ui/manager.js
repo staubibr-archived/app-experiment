@@ -85,6 +85,8 @@ export default Core.Templatable("Widget.ModelTypes", class ModelTypes extends Te
 			
 			this.UpdateLoM(this.entities);
 			
+			// TODO: Save related, tags, files, etc.
+			
 			alert(this.nls.Ressource("success_save"));
 		}, error => this.OnApi_Error.bind(this));
 	}
@@ -141,7 +143,7 @@ export default Core.Templatable("Widget.ModelTypes", class ModelTypes extends Te
 	Template() {
 		return `<div handle='list' widget='Basic.UI.List'></div>
 				<div>
-					<div handle='form-container'></div>
+					<div class='form-container' handle='form-container'></div>
 				    <div class='buttons-container'>
 					    <button handle='btn_delete' class='danger'>Delete</button>
 					    <button handle='btn_new'>New</button>

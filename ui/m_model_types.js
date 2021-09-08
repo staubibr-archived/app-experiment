@@ -2,6 +2,7 @@
 
 import Core from '../../api-web-devs/tools/core.js';
 import Dom from '../../api-web-devs/tools/dom.js';
+import Net from '../../api-web-devs/tools/net.js';
 import Form from '../../api-web-devs/lom/forms/f_model_type.js';
 import LoM from '../../api-web-devs/lom/lom.js';
 import Manager from './manager.js';
@@ -16,6 +17,8 @@ export default Core.Templatable("Widget.ModelTypesManager", class ModelTypesMana
 		
 		LoM.On("change:model_types", this.OnLoM_ModelTypes_Change.bind(this));
 		LoM.On("change:contributors", this.OnLoM_Contributors_Change.bind(this));
+		
+		this.form.files.On("download", this.OnFiles_Download.bind(this));
 	}
 	
 	UpdateLoM(entities) {
@@ -28,6 +31,12 @@ export default Core.Templatable("Widget.ModelTypesManager", class ModelTypesMana
 	
 	OnLoM_ModelTypes_Change(ev) {
 		this.entities = ev.value;
+	}
+	
+	async OnFiles_Download(ev) {
+		var files = await LoM.apis.download.getAll(ev.files, ev.hierarchy);
+		
+		Net.Download("files.zip", files);
 	}
 	
 	Template() {
