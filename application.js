@@ -25,9 +25,17 @@ export default Core.Templatable("Application", class Application extends Templat
 	}
 	
 	async Load() {
-		LoM.contributors = await LoM.apis.contributors.getAll(true);
-		LoM.model_types = await LoM.apis.model_types.getAll(true);
-		LoM.experiments = await LoM.apis.experiments.getAll(true);
+		try {
+			LoM.contributors = await LoM.apis.contributors.getAll(true);
+			LoM.model_types = await LoM.apis.model_types.getAll(true);
+			LoM.experiments = await LoM.apis.experiments.getAll(true);
+		}
+		
+		catch (error) {
+			alert(error.toString());
+			
+			console.error(error);
+		}
 	}
 		
 	Template() {
