@@ -18,8 +18,9 @@ export default Core.Templatable("Widget.ExperimentsManager", class ExperimentsMa
 		LoM.On("change:experiments", this.OnLoM_Experiments_Change.bind(this));
 		LoM.On("change:contributors", this.OnLoM_Contributors_Change.bind(this));
 		LoM.On("change:model_types", this.OnLoM_ModelTypes_Change.bind(this));
-		
-		this.form.files.On("download", this.OnFiles_Download.bind(this));
+				
+		this.form.files.On("download:one", this.OnFiles_DownloadOne.bind(this));
+		this.form.files.On("download:all", this.OnFiles_DownloadAll.bind(this));
 	}
 	
 	UpdateLoM(entities) {
@@ -40,7 +41,13 @@ export default Core.Templatable("Widget.ExperimentsManager", class ExperimentsMa
 		this.form.model_types = top_model_types;
 	}
 	
-	async OnFiles_Download(ev) {
+	async OnFiles_DownloadOne(ev) {
+		var file = await LoM.apis.download.get(ev.file, ev.hierarchy);
+		
+		Net.Download(ev.name, file);
+	}
+	
+	async OnFiles_DownloadAll(ev) {
 		var files = await LoM.apis.download.getAll(ev.files, ev.hierarchy);
 		
 		Net.Download("files.zip", files);

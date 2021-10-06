@@ -40,7 +40,7 @@ export default Core.Templatable("Application", class Application extends Templat
 		
 	Template() {
 		return	`<main handle='main'>
-					<h1 class='row banner'>DEVS Experiments Manager (0.7)</h1>
+					<h1 class='row banner'>DEVS Library of Models Manager</h1>
 					<div handle='page_select' widget='Widget.PageSelector'></div>
 					<hr>
 					<div class='row'>
