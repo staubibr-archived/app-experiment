@@ -1,10 +1,10 @@
 'use strict';
 
-import Core from '../../api-web-devs/tools/core.js';
-import Dom from '../../api-web-devs/tools/dom.js';
-import Templated from '../../api-web-devs/components/templated.js';
-import List from '../../api-web-devs/ui/list.js';
-import Form from '../../api-web-devs/lom/forms/f_model_type.js';
+import Core from '../../app-framework/tools/core.js';
+import Dom from '../../app-framework/tools/dom.js';
+import Templated from '../../app-framework/components/templated.js';
+import List from '../../app-framework/ui/list.js';
+import Form from '../../app-framework/lom/forms/f_model_type.js';
 
 export default Core.Templatable("Widget.ModelTypes", class ModelTypes extends Templated { 
 

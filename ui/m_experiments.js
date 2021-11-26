@@ -1,10 +1,10 @@
 'use strict';
 
-import Core from '../../api-web-devs/tools/core.js';
-import Dom from '../../api-web-devs/tools/dom.js';
-import Net from '../../api-web-devs/tools/net.js';
-import Form from '../../api-web-devs/lom/forms/f_experiment.js';
-import LoM from '../../api-web-devs/lom/lom.js';
+import Core from '../../app-framework/tools/core.js';
+import Dom from '../../app-framework/tools/dom.js';
+import Net from '../../app-framework/tools/net.js';
+import Form from '../../app-framework/lom/forms/f_experiment.js';
+import LoM from '../../app-framework/lom/lom.js';
 import Manager from './manager.js';
 
 export default Core.Templatable("Widget.ExperimentsManager", class ExperimentsManager extends Manager { 

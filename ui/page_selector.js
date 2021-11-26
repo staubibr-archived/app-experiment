@@ -1,9 +1,9 @@
 'use strict';
 
-import Core from '../../api-web-devs/tools/core.js';
-import Dom from '../../api-web-devs/tools/dom.js';
-import Templated from '../../api-web-devs/components/templated.js';
-import List from '../../api-web-devs/ui/list.js';
+import Core from '../../app-framework/tools/core.js';
+import Dom from '../../app-framework/tools/dom.js';
+import Templated from '../../app-framework/components/templated.js';
+import List from '../../app-framework/ui/list.js';
 
 export default Core.Templatable("Widget.PageSelector", class PageSelector extends Templated { 
 

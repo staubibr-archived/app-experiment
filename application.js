@@ -1,15 +1,15 @@
 'use strict';
 
-import Core from '../api-web-devs/tools/core.js';
-import Dom from '../api-web-devs/tools/dom.js';
-import Templated from '../api-web-devs/components/templated.js';
+import Core from '../app-framework/tools/core.js';
+import Dom from '../app-framework/tools/dom.js';
+import Templated from '../app-framework/components/templated.js';
 
 import PageSelector from './ui/page_selector.js';
 import Contributors from './ui/m_contributors.js';
 import ModelTypes from './ui/m_model_types.js';
 import Experiments from './ui/m_experiments.js';
 
-import LoM from '../api-web-devs/lom/lom.js';
+import LoM from '../app-framework/lom/lom.js';
 
 export default Core.Templatable("Application", class Application extends Templated { 
 
